@@ -1,8 +1,4 @@
-library(qtl)
-phenoGeno <-read.cross(format = "csv", file = "Vulnerablity_Index_(E1).csv",  
-                       na.strings= c('NA'), genotypes = c("A","B","H"))
-
-data(F2data)
+library(QTL.gCIMapping)
 
 library(readr)
 test <- read_csv("test.csv", col_names = FALSE)
@@ -29,13 +25,4 @@ QTL.gCIMapping(
   Trait = 1:4,
   dir = getwd(),
   CLO = NULL
-)
-
-getwd()
-QTL.gCIMapping(
-  cross = phenoGeno,
-  flagrqtl = TRUE,           # use R/qtl object
-  Population = "F2",
-  method = "GCIM",
-  dir = getwd()
 )
